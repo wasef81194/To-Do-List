@@ -9,15 +9,31 @@
 }
 .card{
     border-color: grey;
-    height: 100px;
-    width: 700px;
+    height: 150px;
+    width: 98%;
     text-align: center;
-    padding-top: 30px;
     margin-top: 15px !important;
 }
 .event{
-    margin:auto
+    margin-left: 10px;
 }
 .complete{
     text-decoration:line-through;
+    opacity: 0.33;
+}
+.h2{
+    text-align: left !important;
+    color: rgb(97, 97, 97);
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.infos{
+    color: green;
+    text-align: left !important;
+    margin-left: 15px;
+
+}
+.description{
+    text-align: left !important;
+    margin-left: 15px;
 }

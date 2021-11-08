@@ -13,6 +13,9 @@ class Evenement {
       this.element = this.createTemplate()
 
       this.addListener()
+
+      this.delete()
+      
     }
     createTemplate(){
       let newEvent = document.createElement('div')
@@ -20,9 +23,15 @@ class Evenement {
         newEvent.classList.add('card')
         newEvent.style.setProperty('border-color', this.color)
         //titre
+        
         var newContent = document.createTextNode(this.titre+' '+this.lieu+' '+this.date+' '+this.description);
-        newEvent.appendChild(newContent);
-        console.log(newEvent);
+
+        newEvent.innerHTML =`
+        <h2 class='h2'>${this.titre}</h2>
+        <p class='infos'>Le ${this.date} à ${this.lieu}</p>
+        <p class='description'> <b>Description :</b> ${this.description}</p>
+      
+        `;//<button class ='delete'> del </button>
         this.container.append(newEvent)
         return newEvent
     }
@@ -32,9 +41,8 @@ class Evenement {
     }
 
     onClick(){
-
-      console.log('click',this.complete)
-      if(this.complete == false){
+      //console.log('click',this.complete)
+      if(!this.complete){
         this.classList.add('complete')
         this.complete = true;
       }
@@ -43,6 +51,12 @@ class Evenement {
         this.complete = false;
       }
         
+    }
+    delete(){
+      this.delete = document.querySelector('.delete')
+      this.delete.addEventListener('click',() => {
+        console.log('delete')
+      })
     }
 }
   
