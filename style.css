@@ -1,0 +1,20 @@
+.jaune{
+    background-color: yellow;
+}
+.gris{
+    background-color: grey;
+}
+.rouge{
+    background-color: red;
+}
+.card{
+    border-color: grey;
+    height: 100px;
+    width: 700px;
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 15px !important;
+}
+.event{
+    margin:auto
+}
