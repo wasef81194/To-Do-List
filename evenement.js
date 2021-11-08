@@ -1,42 +1,48 @@
 class Evenement {
-    constructor(titre, lieu, date, description,color ) {
+    constructor(titre, lieu, date, description,color,id ) {
       this.titre = titre;
       this.lieu = lieu;
       this.date = date;
       this.color = color;
       this.description = description;
-
+      this.id = id;
+      this.del = document.querySelector('.delete')
+      
       this.container = document.querySelector('.list')
+     
 
       this.complete = false;
-
+      //function
       this.element = this.createTemplate()
 
       this.addListener()
-
-      this.delete()
+      //this.supp()
       
     }
     createTemplate(){
+      console.log(this.id);
       let newEvent = document.createElement('div')
         newEvent.classList.add('event')
         newEvent.classList.add('card')
         newEvent.style.setProperty('border-color', this.color)
         //titre
         
-        var newContent = document.createTextNode(this.titre+' '+this.lieu+' '+this.date+' '+this.description);
+        //var newContent = document.createTextNode(this.titre+' '+this.lieu+' '+this.date+' '+this.description);
 
         newEvent.innerHTML =`
         <h2 class='h2'>${this.titre}</h2>
         <p class='infos'>Le ${this.date} à ${this.lieu}</p>
         <p class='description'> <b>Description :</b> ${this.description}</p>
-      
+        
         `;//<button class ='delete'> del </button>
+        
         this.container.append(newEvent)
         return newEvent
     }
     addListener(){
+      
       this.element.addEventListener('click',this.onClick)
+      //this.del.addEventListener('click',this.supp)
 
     }
 
@@ -52,11 +58,12 @@ class Evenement {
       }
         
     }
-    delete(){
-      this.delete = document.querySelector('.delete')
+   /*supp(){
+     console.log(this)
+      e.stopPropagation
       this.delete.addEventListener('click',() => {
-        console.log('delete')
+        this.element.removeChild(this.element);
       })
-    }
+    }*/
 }
   
