@@ -58,7 +58,7 @@ class Evenement {
       }
         
     }
-   /*supp(){
+   /*supp(){// j'ai pas reussi a supprimer l'element 
      console.log(this)
       e.stopPropagation
       this.delete.addEventListener('click',() => {
